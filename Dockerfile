@@ -6,9 +6,6 @@ ENV RPATH_FLAGS="-Wl,-rpath,/usr/local/lib:/usr/local/lib/openmpi"
 ENV MY_LDFLAGS="-L/usr/local/lib -L/usr/local/lib/openmpi ${RPATH_FLAGS}"
 ENV MY_CPPFLAGS="-I/usr/local/include -I/usr/local/include/openmpi"
 
-# 设置镜像源并更新yum源，同时安装 epel-release 并替换 EPEL 源
-RUN yum install -y epel-release 
-
 RUN yum -y install   \
         bison             \
         byacc             \
