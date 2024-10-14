@@ -7,8 +7,6 @@ ENV MY_LDFLAGS="-L/usr/local/lib -L/usr/local/lib/openmpi ${RPATH_FLAGS}"
 ENV MY_CPPFLAGS="-I/usr/local/include -I/usr/local/include/openmpi"
 
 RUN yum -y install   \
-        bison
-RUN yum -y install   \
         byacc             \
         cscope            \
         ctags             \
@@ -32,7 +30,9 @@ RUN yum -y install   \
         subversion        \
         systemtap         \
         wget
-  RUN   yum -y install    \
+RUN yum -y install   \
+        bison
+RUN   yum -y install    \
         openblas-devel     \
         fftw3-devel        \
         libpng-devel       \
