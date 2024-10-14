@@ -7,13 +7,7 @@ ENV MY_LDFLAGS="-L/usr/local/lib -L/usr/local/lib/openmpi ${RPATH_FLAGS}"
 ENV MY_CPPFLAGS="-I/usr/local/include -I/usr/local/include/openmpi"
 
 # 设置镜像源并更新yum源，同时安装 epel-release 并替换 EPEL 源
-RUN curl -o /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-altarch-7.repo && \
-    yum clean all && \
-    yum makecache && \
-    yum install -y epel-release && \
-    curl -o /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo && \
-    yum clean all && \
-    yum makecache
+RUN yum install -y epel-release 
 
 RUN yum -y install   \
         bison             \
