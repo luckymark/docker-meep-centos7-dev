@@ -7,7 +7,8 @@ ENV MY_LDFLAGS="-L/usr/local/lib -L/usr/local/lib/openmpi ${RPATH_FLAGS}"
 ENV MY_CPPFLAGS="-I/usr/local/include -I/usr/local/include/openmpi"
 
 RUN yum -y install   \
-        bison             \
+        bison
+RUN yum -y install   \
         byacc             \
         cscope            \
         ctags             \
